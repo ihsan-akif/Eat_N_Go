@@ -1,6 +1,7 @@
 import 'package:eat_n_go/Main_Screen/main_screen.dart';
 import 'package:eat_n_go/Register_screen/register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:eat_n_go/Shared/const.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -8,8 +9,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-
   @override
   Widget build(BuildContext context) {
     final emailField = TextField(
