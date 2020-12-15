@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eat_n_go/Shared/const.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -6,8 +7,6 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-
   @override
   Widget build(BuildContext context) {
     final nameField = TextField(
@@ -71,6 +70,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     color: Colors.black, fontWeight: FontWeight.bold)),
             centerTitle: true,
             backgroundColor: Colors.yellow[400],
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.black),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
           ),
           body: Center(
             child: Container(
