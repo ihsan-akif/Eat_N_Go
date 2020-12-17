@@ -21,6 +21,7 @@ class MainScreen extends StatelessWidget {
                 unselectedItemColor: Colors.white,
                 type: BottomNavigationBarType.fixed,
                 backgroundColor: Colors.grey[900],
+                selectedFontSize: 14,
                 currentIndex: model.currentIndex, // have to add this
                 onTap: model.setIndex,
                 items: [
