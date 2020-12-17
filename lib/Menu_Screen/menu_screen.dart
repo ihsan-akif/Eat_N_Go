@@ -13,6 +13,7 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(232, 232, 232, 1),
       appBar: AppBar(
           title: Text(
             'EAT N GO MENU',
@@ -46,31 +47,54 @@ class _MenuScreenState extends State<MenuScreen> {
                                   Container(
                                       padding:
                                           EdgeInsets.only(right: 10, left: 10),
-                                      child: Text('All')),
+                                      child: Text(
+                                        'All',
+                                        style: style.copyWith(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold),
+                                      )),
                                   Container(
                                       padding:
                                           EdgeInsets.only(right: 10, left: 10),
-                                      child: Text('Burger')),
+                                      child: Text('Burger',
+                                          style: style.copyWith(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold))),
                                   Container(
                                       padding:
                                           EdgeInsets.only(right: 10, left: 10),
-                                      child: Text('Fried Chicken')),
+                                      child: Text('Fried Chicken',
+                                          style: style.copyWith(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold))),
                                   Container(
                                       padding:
                                           EdgeInsets.only(right: 10, left: 10),
-                                      child: Text('Drinks')),
+                                      child: Text('Drinks',
+                                          style: style.copyWith(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold))),
                                   Container(
                                       padding:
                                           EdgeInsets.only(right: 10, left: 10),
-                                      child: Text('Fries')),
+                                      child: Text('Fries',
+                                          style: style.copyWith(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold))),
                                   Container(
                                       padding:
                                           EdgeInsets.only(right: 10, left: 10),
-                                      child: Text('Pizza')),
+                                      child: Text('Pizza',
+                                          style: style.copyWith(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold))),
                                   Container(
                                       padding:
                                           EdgeInsets.only(right: 10, left: 10),
-                                      child: Text('Sandwich')),
+                                      child: Text('Sandwich',
+                                          style: style.copyWith(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold))),
                                 ],
                                 fillColor: Colors.yellow[400],
                                 color: Colors.black,
@@ -103,12 +127,110 @@ class _MenuScreenState extends State<MenuScreen> {
                           child: ListView(
                             scrollDirection: Axis.horizontal,
                             children: [
-                              categoriesCard('music', 'Movie 1'),
-                              categoriesCard('music', 'Movie 2'),
-                              categoriesCard('music', 'Movie 3'),
-                              categoriesCard('music', 'Movie 4'),
+                              categoriesCard(
+                                  'assets/images/burgers/chicken_burger.jpg',
+                                  'RM 6.50',
+                                  'Chicken Burger'),
+                              categoriesCard(
+                                  'assets/images/burgers/beef_burger.jpg',
+                                  'RM 7.50',
+                                  'Beef Burger'),
+                              categoriesCard(
+                                  'assets/images/burgers/spicy_burger.jpg',
+                                  'RM 8.00',
+                                  'Spicy Chicken Burger'),
+                              categoriesCard(
+                                  'assets/images/fries/normal_fries.jpg',
+                                  'RM 4.00',
+                                  'Normal Fries'),
                             ],
                           ),
+                        ),
+                        SizedBox(
+                          height: 25.0,
+                        ),
+                        Text(
+                          'Special Offers',
+                          style: style.copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 25.0,
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                                height: 250.0,
+                                child: AspectRatio(
+                                  aspectRatio: 2.9 / 3,
+                                  child: Container(
+                                    margin: EdgeInsets.only(right: 16.0),
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/burgers/chicken_burger.jpg')),
+                                      color: Colors.black,
+                                      //borderRadius: BorderRadius.circular(20.0),
+                                    ),
+                                    child: Align(
+                                      alignment: Alignment(-0.8, -0.85),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.yellow,
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(5.0),
+                                          child: Text(
+                                            'RM 9.50',
+                                            style: style.copyWith(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                )),
+                            Container(
+                              height: 250,
+                              child: Card(
+                                color: Colors.white,
+                                child: AspectRatio(
+                                  aspectRatio: 1.52 / 3,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Text(
+                                        'Chicken Burger with French Fries',
+                                        textAlign: TextAlign.center,
+                                        style: style.copyWith(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w900,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 10),
+                                        child: Text(
+                                          'Chicken, Tomato, Lettuce, Garlic, Cheese, Sauce, French Fries',
+                                          textAlign: TextAlign.left,
+                                          style: style.copyWith(fontSize: 14),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
                         )
                       ],
                     ),
@@ -122,40 +244,54 @@ class _MenuScreenState extends State<MenuScreen> {
     );
   }
 
-  Widget categoryBox(category, bool isHighlight) {
+  Widget categoriesCard(image, price, title) {
     return AspectRatio(
-        aspectRatio: 4,
-        child: Container(
-            margin: EdgeInsets.only(right: 16.0),
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(category,
-                  style:
-                      isHighlight ? style : style.copyWith(color: Colors.grey)),
-            )));
-  }
-
-  Widget categoriesCard(image, title) {
-    return AspectRatio(
-      aspectRatio: 2 / 3,
+      aspectRatio: 3 / 3,
       child: Container(
         margin: EdgeInsets.only(right: 16.0),
         decoration: BoxDecoration(
-          color: Colors.black45,
+          image: DecorationImage(image: AssetImage(image)),
+          color: Colors.black,
           borderRadius: BorderRadius.circular(20.0),
         ),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: Padding(
-            padding: EdgeInsets.all(12.0),
-            child: Text(
-              title,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0, left: 2.0),
+              child: Align(
+                alignment: Alignment(-0.8, -0.8),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.yellow,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(5.0),
+                    child: Text(
+                      price,
+                      style: style.copyWith(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14),
+                    ),
+                  ),
+                ),
+              ),
             ),
-          ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.all(12.0),
+                child: Text(
+                  title,
+                  style: style.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
