@@ -1,15 +1,18 @@
 import 'package:eat_n_go/Cart_Screen/cart_screen.dart';
 import 'package:eat_n_go/Favorite_Screen/favorite_screen.dart';
 import 'package:eat_n_go/Menu_Screen/menu_screen.dart';
+import 'package:eat_n_go/Model/food.dart';
 import 'package:eat_n_go/Profile_Screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
+import 'package:eat_n_go/Model/user.dart';
 import 'main_screen_model.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key key}) : super(key: key);
+  final User user;
+  final Food food;
+  const MainScreen({Key key, this.user, this.food}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +58,13 @@ class MainScreen extends StatelessWidget {
   Widget getViewForIndex(int index) {
     switch (index) {
       case 0:
-        return MenuScreen();
+        return MenuScreen(user: user, food: food);
       case 1:
         return FavoriteScreen();
       case 2:
-        return CartScreen();
+        return CartScreen(
+          user: user,
+        );
       case 3:
         return ProfileScreen();
       default:
