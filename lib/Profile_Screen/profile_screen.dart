@@ -61,24 +61,30 @@ class _ProfileScreenState extends State<ProfileScreen>
               Text('Ihsan', style: style.copyWith(fontWeight: FontWeight.bold)),
               Container(
                 //decoration: new BoxDecoration(color: Colors.yellow[400]),
-                child: TabBar(
-                  controller: _controller,
-                  tabs: [
-                    new Tab(
-                      child: Text(
-                        'Info',
-                        style: style.copyWith(
-                            fontWeight: FontWeight.bold, color: Colors.black),
-                      ),
-                    ),
-                    new Tab(
-                      child: Text(
-                        'Settings',
-                        style: style.copyWith(
-                            fontWeight: FontWeight.bold, color: Colors.black),
-                      ),
-                    ),
-                  ],
+                child: Builder(
+                  builder: (BuildContext context) {
+                    return TabBar(
+                      controller: _controller,
+                      tabs: [
+                        new Tab(
+                          child: Text(
+                            'Info',
+                            style: style.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                        ),
+                        new Tab(
+                          child: Text(
+                            'Settings',
+                            style: style.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ),
               Container(
@@ -172,43 +178,43 @@ class _ProfileScreenState extends State<ProfileScreen>
                       child: Expanded(
 
                           //color: Colors.red,
-                          child: ListView(
-                              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
-                              shrinkWrap: true,
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                             MaterialButton(
                               onPressed: () {},
-                              child: Text("CHANGE YOUR NAME",
+                              child: Text("Change Name",
                                   style: style.copyWith(
                                       fontWeight: FontWeight.bold)),
                             ),
                             MaterialButton(
                               onPressed: () {},
-                              child: Text("CHANGE YOUR PASSWORD",
+                              child: Text("Change Password",
                                   style: style.copyWith(
                                       fontWeight: FontWeight.bold)),
                             ),
                             MaterialButton(
                               onPressed: () {},
-                              child: Text("CHANGE YOUR PHONE",
+                              child: Text("Change Phone Number",
                                   style: style.copyWith(
                                       fontWeight: FontWeight.bold)),
                             ),
                             MaterialButton(
                               onPressed: () {},
-                              child: Text("GO LOGIN SCREEN",
+                              child: Text("Login Screen",
                                   style: style.copyWith(
                                       fontWeight: FontWeight.bold)),
                             ),
                             MaterialButton(
                               onPressed: () {},
-                              child: Text("REGISTER NEW ACCOUNT",
+                              child: Text("Register New Account",
                                   style: style.copyWith(
                                       fontWeight: FontWeight.bold)),
                             ),
                             MaterialButton(
                               onPressed: () {},
-                              child: Text("BUY CREDIT",
+                              child: Text("Buy Credit",
                                   style: style.copyWith(
                                       fontWeight: FontWeight.bold)),
                             ),

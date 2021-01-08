@@ -10,27 +10,19 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text(
-            'FAVORITE',
-            style: style.copyWith(
-                fontWeight: FontWeight.bold, color: Colors.black),
+        appBar: AppBar(
+            title: Text(
+              'FAVORITE',
+              style: style.copyWith(
+                  fontWeight: FontWeight.bold, color: Colors.black),
+            ),
+            backgroundColor: Colors.yellow[400],
+            automaticallyImplyLeading: false),
+        body: Container(
+          child: Center(
+            child: Image(
+                image: AssetImage('assets/images/under-construction.png')),
           ),
-          backgroundColor: Colors.yellow[400],
-          automaticallyImplyLeading: false),
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Favorite Screen'),
-              ],
-            )
-          ],
-        ),
-      ),
-    );
+        ));
   }
 }
